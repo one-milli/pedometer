@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-     <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <title>歩数計</title>
     <style>
-
       /*
       Copyright (c) 2014 kangrian リアンさん (@kangrian) 
       Released under the MIT license
       URL：http://opensource.org/licenses/mit-license.php
       */
 
-      * { background:#C0DEED}
+      * {
+        background: #c0deed;
+      }
       #awan {
-      position:fixed;
-      top:0px;left:0px;
-      width:100%;
-      height:100%;
-      text-align:center;
-      margin:0px;
-      padding:0px;
-      background-color:#C0DEED;
-      background: url(https://abs.twimg.com/images/themes/theme1/bg.png) center top repeat-x;
-      padding-top:100px;
-      padding-bottom:10px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        background-color: #c0deed;
+        background: url(https://abs.twimg.com/images/themes/theme1/bg.png)
+          center top repeat-x;
+        padding-top: 100px;
+        padding-bottom: 10px;
         width: 100%;
         height: 135px;
         animation: awan-animasi 10s linear infinite;
@@ -39,7 +42,7 @@
 
         to {
           background-position: 100% 0;
-        };
+        }
       }
 
       @-webkit-keyframes awan-animasi {
@@ -49,7 +52,7 @@
 
         to {
           background-position: 100% 0;
-        };
+        }
       }
 
       @-ms-keyframes awan-animasi {
@@ -59,7 +62,7 @@
 
         to {
           background-position: 100% 0;
-        };
+        }
       }
 
       @-moz-keyframes awan-animasi {
@@ -69,40 +72,51 @@
 
         to {
           background-position: 100% 0;
-        };
+        }
       }
-
 
       p {
         position: relative;
-        padding: 1rem .5rem;
+        padding: 1rem 0.5rem;
       }
-      p:after{
+      p:after {
         position: absolute;
         bottom: 0;
         left: 35%;
         right: 65%;
         width: 30%;
         height: 5px;
-        content: '';
+        content: "";
         border-radius: 3px;
-        background-image: -webkit-gradient(linear, right top, left top, from(#2af598), to(#009efd));
-        background-image: -webkit-linear-gradient(right, #2af598 0%, #009efd 100%);
+        background-image: -webkit-gradient(
+          linear,
+          right top,
+          left top,
+          from(#2af598),
+          to(#009efd)
+        );
+        background-image: -webkit-linear-gradient(
+          right,
+          #2af598 0%,
+          #009efd 100%
+        );
         background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
       }
 
-
-      body{
-        font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN',sans-serif;
+      body {
+        font-family: "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN",
+          sans-serif;
       }
-
     </style>
   </head>
   <body>
-    <h1 id = "awan">歩数計
-    <p>現時刻の歩数:{{cnt}}歩</p>
-    <p>過去の歩数データ</p>
-    <img src="http://192.168.2.110:50000/graph1" />
-  </h1>
+    <h1 id="awan">
+      <p>歩数計</p>
+      <p>現時刻の歩数:{{cnt}}歩</p>
+      <!-- 便宜上1分ごとの歩数をカウントしている -->
+      <p>過去の歩数データ</p>
+      <img src="http://192.168.2.110:50000/graph1" />
+      <!-- 自宅でのIPアドレス -->
+    </h1>
   </body>
 </html>
