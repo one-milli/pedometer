@@ -5,9 +5,6 @@ app = Flask(__name__)
 
 # global variables
 cnt_today = 0
-# adc_list = []
-# time_list = []
-# list_max = 60
 step_dict = {}
 ip_dict = {}
 dt_now = datetime.datetime.now()
@@ -28,8 +25,6 @@ def getadc():
     adc_value = request.args.get('ADC', type=int)
     time = request.args.get('TIME', type=int)
     global cnt_today
-    # global time_list
-    # global adc_list
     global date_pre
     dt_now = datetime.datetime.now()
     date = str(dt_now.hour)+':'+str(dt_now.minute)  # for test
@@ -39,16 +34,6 @@ def getadc():
 
     if adc_value < 1500:  # 1step
         cnt_today += 1
-
-    # if len(time_list) > list_max:
-    #     time_list.pop(0)
-    #     adc_list.pop(0)
-
-    # time_list.append(time)
-    # adc_list.append(adc_value)
-
-    # print(time_list)
-    # print(adc_list)
 
     print("Steps = "+str(cnt_today))
     ip_dict[request.remote_addr] = cnt_today
@@ -81,8 +66,6 @@ def graph1():
     from matplotlib.backends.backend_agg import FigureCanvasAgg
     import io
 
-    global time_list
-    global adc_list
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.bar(step_dict.keys(), step_dict.values())
