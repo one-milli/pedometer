@@ -14,7 +14,6 @@
         background: #c0deed;
       }
       #awan {
-        position: fixed;
         top: 0px;
         left: 0px;
         width: 100%;
@@ -25,10 +24,10 @@
         background-color: #c0deed;
         background: url(https://abs.twimg.com/images/themes/theme1/bg.png)
           center top repeat-x;
-        padding-top: 100px;
-        padding-bottom: 10px;
+        padding-top: 160px;
+        padding-bottom: 20px;
         width: 100%;
-        height: 135px;
+        height: auto;
         animation: awan-animasi 10s linear infinite;
         -ms-animation: awan-animasi 10s linear infinite;
         -moz-animation: awan-animasi 10s linear infinite;
@@ -75,11 +74,11 @@
         }
       }
 
-      p {
+      h2 {
         position: relative;
         padding: 1rem 0.5rem;
       }
-      p:after {
+      h2:after {
         position: absolute;
         bottom: 0;
         left: 35%;
@@ -104,18 +103,19 @@
       }
 
       body {
+        height: auto;
         font-family: "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN",
           sans-serif;
       }
     </style>
   </head>
   <body>
-    <h1 id="awan">
-      歩数計
-      <p>現時刻の歩数:{{cnt}}歩</p>
+    <div id="awan">
+      <h1>歩数計</h1>
+      <h2>現時刻の歩数:{{cnt}}歩</h2>
       <!-- 便宜上1分ごとの歩数をカウントしている -->
-      <p>過去の歩数データ</p>
+      <h2>過去の歩数データ</h2>
       <img src="../graph1" />
-    </h1>
+    </div>
   </body>
 </html>
